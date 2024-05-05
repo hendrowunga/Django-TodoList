@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block content %}
+<a href="{% url %}" class="btn btn-primary btn-sm mt-5">Update</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Todo</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in todolist%}
+    <tr>
+      <th scope="row">{{item.id}}</th>
+      <td>{{item.title}}</td>
+      <td>
+        <a href="#" class="btn btn-primary btn-sm">Update</a>
+        <a href="#" class="btn btn-danger btn-sm">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock content%}
