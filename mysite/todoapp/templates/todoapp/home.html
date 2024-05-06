@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% block content %}
-<a href="{% url %}" class="btn btn-primary btn-sm mt-5">Update</a>
+<a href="{% url 'add-todo' %}" class="btn btn-primary btn-sm mt-5">Add item</a>
 <table class="table">
   <thead>
     <tr>
@@ -14,7 +14,12 @@
       <th scope="row">{{item.id}}</th>
       <td>{{item.title}}</td>
       <td>
-        <a href="#" class="btn btn-primary btn-sm">Update</a>
+        <a
+          href="{% url 'update-todo' pk=item.id %}"
+          class="btn btn-primary btn-sm"
+          >Update</a
+        >
+
         <a href="#" class="btn btn-danger btn-sm">Delete</a>
       </td>
     </tr>
