@@ -1,3 +1,9 @@
 {% extends "base.html" %} {%block content %}
 <h3>Yakin untuk Hapus item <span class="text-danger">{{item.title}}</span>?</h3>
+<form method="post">
+  <a href="{% url 'home' %}" class="btn btn-primary btn-sm">Cancel</a>
+  <a href="{% url 'delete-item' pk=item.pk%}" class="btn btn-danger btn-sm"
+    >Confirm</a
+  >
+</form>
 {% endblock content%}
